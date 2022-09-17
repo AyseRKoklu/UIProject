@@ -109,7 +109,4 @@ public class RegistrationPage {
 
     @FindBy(xpath = "//button[@class='button button--success button--large']")
     public WebElement registerButton;
-
-    @FindBy(xpath = "//span[.='Account created']")
-    public WebElement accountCreatedPageVerify;
 }

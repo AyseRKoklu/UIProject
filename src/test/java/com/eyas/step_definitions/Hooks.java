@@ -17,19 +17,10 @@ public class Hooks {
 
     @After
     public void teardownScenario(Scenario scenario) {
-        scenario.isFailed();
-
-        // using if statement to take a screenshot of the failed tests
-        // but for the purpose of this task, screenshot will be taken for all tests
-        //if (scenario.isFailed()) {
+        if (scenario.isFailed()) {
             byte[] screenshot = ((TakesScreenshot) Driver.getDriver()).getScreenshotAs(OutputType.BYTES);
             scenario.attach(screenshot, "image/png", scenario.getName());
-        //}
-
+        }
         Driver.closeDriver();
     }
-
-
-
-
 }

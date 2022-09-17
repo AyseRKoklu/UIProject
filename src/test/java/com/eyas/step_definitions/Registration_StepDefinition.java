@@ -35,7 +35,7 @@ public class Registration_StepDefinition {
     @Then("user clicks on next button")
     public void user_clicks_on_next_button() throws InterruptedException {
         registrationPage.nextButton.click();
-        Thread.sleep(2000);
+        Thread.sleep(1000);
     }
 
     @Then("user displays following {string} in email and {string} in password")
@@ -55,9 +55,8 @@ public class Registration_StepDefinition {
     }
 
     @When("user enters {string} {string} and {string}")
-    public void user_enters_and(String firstname, String lastname, String dateOfBirth) throws InterruptedException {
+    public void user_enters_and(String firstname, String lastname, String dateOfBirth){
         registrationPage.dateOfBirthInput.click();
-        Thread.sleep(1000);
         registrationPage.dateOfBirthInput.sendKeys(dateOfBirth);
         registrationPage.firstnameInput.sendKeys(firstname);
         registrationPage.lastnameInput.sendKeys(lastname);
@@ -119,6 +118,5 @@ public class Registration_StepDefinition {
     public void user_clicks_on_register_button() {
         registrationPage.registerButton.click();
     }
-
 
 }

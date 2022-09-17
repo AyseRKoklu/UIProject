@@ -1,3 +1,4 @@
+@wip
 Feature: Registration form
 
   Background: verify the page
@@ -57,7 +58,6 @@ Feature: Registration form
       | addressLine1 | town   | postCode | areaCode | phoneNumber |
       | 12 Xyz St    | London | W2 5DT   |          | 984373      |
 
-    @wip
   Scenario: Registration Page 4/4
     When user enters "abc@gmail.com" and "As1234!Sa"
     And user clicks on next button
@@ -70,7 +70,7 @@ Feature: Registration form
     And user should see the "Want to hear about our latest offers?" header
     And user accepts terms and conditions
     Then user clicks on register button
-# Currently, I'm not able to see the "account created" page after clicking on the register button
+    # Currently, I'm not able to see the "account created" page after clicking on the register button, the page does not load
 
 
 
