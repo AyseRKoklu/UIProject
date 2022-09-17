@@ -2,7 +2,7 @@
 Feature: Registration form
 
   Background: verify the page
-    Given user should see the "Let’s get you started!" header
+    Given user verifies the "Let’s get you started!" header
 
   Scenario Outline: Registration page 1/4
     When user enters "<email>" and "<password>"
@@ -19,7 +19,7 @@ Feature: Registration form
   Scenario Outline: Registration Page 2/4
     When user enters "abc@gmail.com" and "As1234!Sa"
     And user clicks on next button
-    And user should see the "Great! Now let's get to know you!" header
+    And user verifies the "Great! Now let's get to know you!" header
     And user enters "<firstname>" "<lastname>" and "<dateOfBirth>"
     And user clicks on next button
     And user displays following "<firstnameErrorMessage>" in firstname "<lastnameErrorMessage>" in lastname and "<dobErrorMessage>" in dateOfBirth
@@ -33,10 +33,10 @@ Feature: Registration form
   Scenario Outline: Registration Page 3/4
     When user enters "abc@gmail.com" and "As1234!Sa"
     And user clicks on next button
-    And user should see the "Great! Now let's get to know you!" header
+    And user verifies the "Great! Now let's get to know you!" header
     And user enters "John" "Doe" and "10101995"
     And user clicks on next button
-    And user should see the "Thanks John! We just need a few more details" header
+    And user verifies the "Thanks John! We just need a few more details" header
     When user enters "<addressLine1>" "<town>" "<postCode>" "<areaCode>" and "<phoneNumber>"
     Then user clicks on next button
     And user displays following "<addressLine1ErrorMessage>" in addressLine1 "<townErrorMessage>" in town and "<postCodeErrorMessage>" in postCode "<phoneNumberErrorMessage>" in phoneNumber
@@ -47,13 +47,13 @@ Feature: Registration form
   Scenario Outline: Valid registration Page 3/4
     When user enters "abc@gmail.com" and "As1234!Sa"
     And user clicks on next button
-    And user should see the "Great! Now let's get to know you!" header
+    And user verifies the "Great! Now let's get to know you!" header
     And user enters "John" "Doe" and "10101995"
     And user clicks on next button
-    And user should see the "Thanks John! We just need a few more details" header
+    And user verifies the "Thanks John! We just need a few more details" header
     When user enters "<addressLine1>" "<town>" "<postCode>" "<areaCode>" and "<phoneNumber>"
     Then user clicks on next button
-    And user should see the "Want to hear about our latest offers?" header
+    And user verifies the "Want to hear about our latest offers?" header
     Examples:
       | addressLine1 | town   | postCode | areaCode | phoneNumber |
       | 12 Xyz St    | London | W2 5DT   |          | 984373      |
@@ -61,15 +61,16 @@ Feature: Registration form
   Scenario: Registration Page 4/4
     When user enters "abc@gmail.com" and "As1234!Sa"
     And user clicks on next button
-    And user should see the "Great! Now let's get to know you!" header
+    And user verifies the "Great! Now let's get to know you!" header
     And user enters "John" "Doe" and "10101995"
     And user clicks on next button
-    And user should see the "Thanks John! We just need a few more details" header
+    And user verifies the "Thanks John! We just need a few more details" header
     When user enters "12 Xyz St" "London" "W2 5DT" "<areaCode>" and "984373"
     Then user clicks on next button
-    And user should see the "Want to hear about our latest offers?" header
+    And user verifies the "Want to hear about our latest offers?" header
     And user accepts terms and conditions
     Then user clicks on register button
+    # Then user verifies "..." success message
     # Currently, I'm not able to see the "account created" page after clicking on the register button, the page does not load
 
 

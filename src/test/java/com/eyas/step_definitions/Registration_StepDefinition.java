@@ -12,8 +12,8 @@ public class Registration_StepDefinition {
 
     RegistrationPage registrationPage = new RegistrationPage();
 
-    @Given("user should see the {string} header")
-    public void user_should_see_the_header(String expectedHeader) {
+    @Given("user verifies the {string} header")
+    public void user_verifies_the_header(String expectedHeader) {
         String actualHeader = registrationPage.pageHeader.getText();
         Assert.assertEquals(expectedHeader, actualHeader);
 
